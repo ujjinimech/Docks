@@ -26,6 +26,7 @@ eksctl create cluster --name my-cluster --region region-code --fargate
 ```
 aws eks update-kubeconfig --region us-east-1 --name eks-clusterr
 ```
+>  if this command does't work, try re installing aws cli and restart your terminal 
 
 ## Delete cluster
 ```
