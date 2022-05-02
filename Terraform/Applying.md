@@ -22,5 +22,5 @@ terraform apply --auto-approve
 
 ## delete
 ```
-terraform destroy
+terraform destroy --auto-approve
 ```
