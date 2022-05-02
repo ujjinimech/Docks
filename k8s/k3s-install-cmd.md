@@ -4,6 +4,10 @@
 ```
 curl -sfL https://get.k3s.io | sh -
 ```
+### for specific version
+```
+curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION=<version> sh -
+```
 
 ## Export the config file
 ```
