@@ -17,7 +17,7 @@ terraform plan
 
 ## apply
 ```
-terraform apply
+terraform apply --auto-approve
 ```
 
 ## delete
