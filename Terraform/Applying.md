@@ -5,7 +5,7 @@
 terraform init
 ```
 
-## formate
+## Formate
 ```
 terraform fmt
 ```
@@ -15,12 +15,17 @@ terraform fmt
 terraform plan
 ```
 
-## apply
+## Validating
+```
+terraform validate
+```
+
+## Apply
 ```
 terraform apply --auto-approve
 ```
 
-## delete
+## Delete
 ```
 terraform destroy --auto-approve
 ```
