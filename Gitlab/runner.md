@@ -23,5 +23,5 @@ sudo gitlab-runner start
 
 ## register the cluster
 ```
-sudo gitlab-runner register   --non-interactive   --url "https://<gitlab url>/"   --registration-token "<gitlab-token>"   --executor "docker"   --docker-image alpine:latest   --description "docker-runner"   --maintenance-note "Free-form maintainer notes about this runner"   --tag-list "docker"   --run-untagged="true"   --locked="false"   --access-level="not_protected"
+sudo gitlab-runner register   --non-interactive   --url "https://<gitlab url>/"   --registration-token "<gitlab-token>"   --executor "Kubernetes"   --docker-image alpine:latest   --description "docker-runner"   --maintenance-note "Free-form maintainer notes about this runner"   --tag-list "docker"   --run-untagged="true"   --locked="false"   --access-level="not_protected"
 ```
