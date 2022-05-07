@@ -22,12 +22,12 @@ ip r
 netstat -natulp | grep <pode name>
 ```
 
-## for address
+## For cheking address
 ```
 ip addr
 ```
 
-## for all the network names
+## for cheking all the network names
 ``` 
 if config
 ```
