@@ -1,4 +1,4 @@
-```
+
 stages:
    - build
    - deploy
@@ -26,5 +26,5 @@ deploy:
   dependencies:
      -  build
   when: manual
-```  
+ 
   
