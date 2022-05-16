@@ -10,3 +10,5 @@ build:
     - docker info
     - docker build --pull -t indiamart-practice/indiamart-proj . 
     - docker push registry.gitlab.com/indiamart-practice/indiamart-proj
+    
+```   
