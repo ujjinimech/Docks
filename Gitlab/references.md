@@ -1,6 +1,6 @@
-#References 
+# References 
 ```
-GitLab docs here.
+GitLab docs [here](https://docs.gitlab.com/).
 ```
 ```
 ArgoCD docs here.
