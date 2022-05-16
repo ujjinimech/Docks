@@ -3,12 +3,15 @@
 ```
 https://docs.gitlab.com/
 ```
+## ArgoCD docs
 ```
-ArgoCD docs here.
+https://argo-cd.readthedocs.io/en/stable/getting_started/
 ```
+## Ngrok
 ```
-Ngrok here.
+https://ngrok.com/download
 ```
+## k3s
 ```
-K3s here.
+https://rancher.com/docs/k3s/latest/en/quick-start/
 ```
