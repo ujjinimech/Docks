@@ -1,4 +1,3 @@
-```
 build:
   stage: build
   image:
@@ -12,7 +11,6 @@ build:
       /kaniko/executor
       --context "${CI_PROJECT_DIR}"
       --dockerfile "Dockerfile"
-      --destination  "${CI_REGISTRY_IMAGE}:tag"
-```      
+      --destination  "${CI_REGISTRY_IMAGE}:tag"    
       
       
