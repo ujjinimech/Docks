@@ -1,0 +1,30 @@
+```
+stages:
+   - build
+   - deploy
+build:               # job name
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  script:
+    - mkdir -p /kaniko/.docker
+    - echo "{\"auths\":{\"${CI_REGISTRY}\":{\"auth\":\"$(printf "%s:%s" "${CI_REGISTRY_USER}" "${CI_REGISTRY_PASSWORD}" | base64 | tr -d '\n')\"}}}" > /kaniko/.docker/config.json
+    - cat /kaniko/.docker/config.json
+    - >-
+      /kaniko/executor
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "Dockerfile"
+      --destination  "${CI_REGISTRY_IMAGE}:tag"
+deploy:
+  stage: deploy
+  image: dtzar/helm-kubectl
+  script:
+     - echo $KUBE_CONFIG | base64 -d  > /tmp/kube_config.yaml 
+     - export KUBECONFIG=/tmp/kube_config.yaml 
+     - kubectl apply -f apliset.yaml -n argocd   
+  dependencies:
+     -  build
+  when: manual
+```  
+  
