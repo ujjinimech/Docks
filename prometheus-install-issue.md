@@ -1,0 +1,28 @@
+kubectl get validatingwebhookconfiguration -A
+NAME                              WEBHOOKS   AGE
+kube-prometheus-stack-admission   1          52d
+
+kubectl delete validatingwebhookconfiguration/kube-prometheus-stack-admission -A
+validatingwebhookconfiguration.admissionregistration.k8s.io "kube-prometheus-stack-admission" deleted
+
+kubectl get mutatingwebhookconfiguration -A
+NAME                              WEBHOOKS   AGE
+kube-prometheus-stack-admission   1          52d
+
+kubectl delete mutatingwebhookconfiguration/kube-prometheus-stack-admission -A
+mutatingwebhookconfiguration.admissionregistration.k8s.io "kube-prometheus-stack-admission" deleted
+
+helm install kps prometheus-community/kube-prometheus-stack --version=15.1.1 -n monitoring \
+> --set nameOverride=alpha01 \
+> --set alertmanager.enabled=false \
+> --set grafana.enabled=true \
+> --set prometheus.service.type=LoadBalancer,prometheus.service.loadBalancerIP=172.25.3.38 \
+> --set prometheusOperator.serviceMonitorSelector={} \
+> --set prometheusOperator.serviceMonitorNamespaceSelector={}
+NAME: kps
+LAST DEPLOYED: Fri Apr 23 16:07:21 2021
+NAMESPACE: monitoring
+STATUS: deployed
+REVISION: 1
+NOTES:
+kube-prometheus-stack has been installed. Check its status by running:
