@@ -1,5 +1,7 @@
 kubectl get validatingwebhookconfiguration -A
-NAME                              WEBHOOKS   AGE
+
+NAME                                WEBHOOKS   AGE
+
 kube-prometheus-stack-admission   1          52d
 
 kubectl delete validatingwebhookconfiguration/kube-prometheus-stack-admission -A
