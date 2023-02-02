@@ -1,0 +1,83 @@
+stages:
+  - push
+push-to-s3:      
+  stage: push
+  image:
+    name: amazon/aws-cli
+    entrypoint: [""]
+
+  script:
+    - echo "pushing index.html to s3..."
+    - aws --version
+    - aws s3 cp index.html s3://S3_BUCKET --recursive
+
+    - echo "Application successfully pushed."
+    
+    
+    
+    
+    
+stages:
+  - artifact
+  - push
+  
+
+artifact:
+  stage: artifact
+  script:
+   - echo "new file"
+  artifacts:
+     paths:
+       - index.html
+
+push-to-s3:      
+  stage: push
+  image:
+    name: amazon/aws-cli
+    entrypoint: [""]
+
+  script:
+    - echo "pushing index.html to s3..."
+    - aws --version
+    #- touch README.md
+    - ls $(pwd)
+    - aws s3 cp ./index.html s3://$S3_BUCKET --recursive
+
+- echo "Application  successfully pushed."
+
+
+
+
+
+
+
+stages:
+  #- artifact
+  - push
+  
+
+# artifact:
+#   stage: artifact
+#   script:
+#    - echo "new file"
+#   artifacts:
+#      paths:
+#        - index.html
+
+push-to-s3:      
+  stage: push
+  image:
+    name: amazon/aws-cli
+    entrypoint: [""]
+
+  script:
+    - echo "pushing index.html to s3..."
+    - aws --version
+    #- touch README.md
+    - ls $(pwd)
+    #- aws s3 rm s3://$S3_BUCKET --recursive
+    - aws s3 cp ./2126_antique_cafe/ s3://$S3_BUCKET --recursive
+
+    - echo "Application  successfully pushed."
+
+
